@@ -60,6 +60,10 @@ passwordRecoveryController.verifyCode = async (req, res) => {
     //Extraer el token de las cookies
     const token = req.cookies.tokenRecoveryCode;
 
+    if(!token){
+        return res.json({message: "Token not found"});
+    }
+
     // Decodificar el token
     const decoded = jsonwebtoken.verify(token, config.JWT.secret);
 

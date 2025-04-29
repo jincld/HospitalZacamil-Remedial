@@ -25,6 +25,9 @@ const doctorSchema = new Schema(
 
     specialty: {
       type: String,
+    },
+    isVerified: {
+      type: Boolean
     }
   },
   {
